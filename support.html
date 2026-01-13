@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - PerfectDay Weddings</title>
+    <meta name="description" content="Get help and support for PerfectDay Weddings app.">
+    <link rel="icon" type="image/jpeg" href="IMG-20260112-WA0002.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage-green: #9AB897;
+            --sage-dark: #7A9A77;
+            --sage-light: #C5D9C3;
+            --sage-lighter: #E8F0E7;
+            --cream: #FDFDF9;
+            --text-dark: #3D4A3D;
+            --text-light: #6B7A6B;
+            --white: #FFFFFF;
+            --champagne: #D4C4A8;
+            --champagne-light: #F5EFE6;
+            --champagne-gold: #A89968;
+            --gold-accent: #C4B896;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--sage-lighter) 0%, var(--champagne-light) 100%);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--sage-light);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .header-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--sage-dark);
+        }
+
+        .header-title .highlight {
+            font-style: italic;
+            color: var(--champagne-gold);
+        }
+
+        .back-link {
+            font-size: 0.9rem;
+            color: var(--sage-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--champagne-gold);
+        }
+
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 500;
+            color: var(--sage-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-intro {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(145deg, var(--white) 0%, var(--sage-lighter) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border: 1px solid var(--sage-light);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--sage-light) 0%, var(--champagne-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--sage-dark);
+        }
+
+        .contact-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--sage-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(154, 184, 151, 0.3);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(154, 184, 151, 0.4);
+        }
+
+        .contact-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--sage-light);
+        }
+
+        .faq-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--sage-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--sage-green);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            main {
+                padding: 3rem 1.5rem;
+            }
+
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-brand">
+            <img src="IMG-20260110-WA0014.png" alt="PerfectDay" class="header-logo">
+            <span class="header-title">Perfect<span class="highlight">Day</span> Weddings</span>
+        </a>
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+    </header>
+
+    <main>
+        <h1 class="page-title">Support</h1>
+        <p class="page-intro">We're here to help make your wedding planning journey as smooth as possible.</p>
+
+        <div class="contact-card">
+            <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </div>
+            <h2>Get in Touch</h2>
+            <p>
+                Have a question, found a bug, or just want to share feedback? We'd love to hear from you.
+                Our small team reads every message and we typically respond within 24-48 hours.
+            </p>
+            <a href="mailto:hello@perfectday-weddings.com" class="contact-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Email Us
+            </a>
+        </div>
+
+        <!-- About the App -->
+        <div class="faq-section">
+            <h2>About PerfectDay Weddings</h2>
+
+            <div class="faq-item">
+                <h3>What is PerfectDay Weddings?</h3>
+                <p>
+                    PerfectDay Weddings is a comprehensive wedding planning app designed to help couples
+                    organise every aspect of their special day. From managing your guest list and tracking
+                    your budget to coordinating vendors and creating your timeline, everything you need
+                    is in one place.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What can I do with the app?</h3>
+                <p>
+                    The app includes tools for budget tracking, guest list management with digital RSVPs,
+                    vendor coordination, task checklists, day-of scheduling, honeymoon planning, and
+                    post-wedding wrap-up. You can collaborate with your partner, family, or wedding planner,
+                    and access everything offline when you need it.
+                </p>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="faq-section">
+            <h2>Getting Started</h2>
+
+            <div class="faq-item">
+                <h3>Do I need to create an account?</h3>
+                <p>
+                    No! You can start using PerfectDay Weddings immediately without signing up or providing
+                    any personal information. The app works anonymously by default. If you'd like to sync
+                    your data across devices or enable cloud backup, you can optionally link an email address
+                    at any time.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I use the app offline?</h3>
+                <p>
+                    Yes, the app works fully offline. Your data is stored securely on your device, so you
+                    can plan your wedding anywhere, whether you have signal or not. Perfect for those venue
+                    visits in the countryside!
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I sync between devices?</h3>
+                <p>
+                    To sync your wedding data across multiple devices, link an email address in the app
+                    settings and enable cloud sync. Your data will be securely backed up and available
+                    on any device where you sign in with the same email.
+                </p>
+            </div>
+        </div>
+
+        <!-- Data & Privacy -->
+        <div class="faq-section">
+            <h2>Data & Privacy</h2>
+
+            <div class="faq-item">
+                <h3>Is my data secure?</h3>
+                <p>
+                    Your data is encrypted using AES-256-GCM encryption and stored locally on your device.
+                    If you enable cloud sync, your data is also encrypted in transit and stored securely
+                    in EU-based servers. We take your privacy seriously and never sell your data.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I export my data?</h3>
+                <p>
+                    Yes! You can export your guest list, budget, and other planning data to CSV or PDF
+                    formats. This makes it easy to share with vendors, print for reference, or keep a
+                    personal backup. You can also request a full data export in JSON format through
+                    the privacy settings.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I delete my data?</h3>
+                <p>
+                    You have full control over your data. To delete local data, simply uninstall the app.
+                    If you have cloud sync enabled, you can delete your cloud data through the app's
+                    privacy settings, or email us and we'll take care of it for you.
+                </p>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="faq-section">
+            <h2>Features & Functionality</h2>
+
+            <div class="faq-item">
+                <h3>How does the guest RSVP feature work?</h3>
+                <p>
+                    You can generate unique RSVP links for your guests and share them via text, email,
+                    or your wedding website. Guests can respond directly through the link, and their
+                    responses automatically sync to your guest list. It's the easiest way to track
+                    who's coming!
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I invite others to help plan?</h3>
+                <p>
+                    Yes! You can invite your partner, family members, or wedding planner to collaborate.
+                    You control what access they have, whether they can edit everything, help with
+                    specific areas, or just view your plans.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's the difference between free and premium?</h3>
+                <p>
+                    The free version includes all essential planning tools you need for your wedding.
+                    Premium tiers unlock advanced features like enhanced collaboration, priority support,
+                    and additional customisation options. You can upgrade anytime through the app.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I plan multiple weddings?</h3>
+                <p>
+                    Yes! This is great for professional wedding planners or anyone helping coordinate
+                    multiple celebrations. Each wedding is kept completely separate with its own
+                    data and collaborators.
+                </p>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="faq-section">
+            <h2>Troubleshooting</h2>
+
+            <div class="faq-item">
+                <h3>The app isn't syncing - what should I do?</h3>
+                <p>
+                    First, check that you have an internet connection and that cloud sync is enabled
+                    in settings. Try closing and reopening the app. If the problem persists, try signing
+                    out and back in. Still stuck? Email us with details and we'll help sort it out.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>I accidentally deleted something - can I recover it?</h3>
+                <p>
+                    The app creates automatic local backups, so recent data can often be recovered.
+                    Check the backup and restore options in settings. If you have cloud sync enabled,
+                    your data may also be recoverable from there. Contact us if you need help.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I report a bug?</h3>
+                <p>
+                    We appreciate bug reports, they help us make the app better for everyone! Email us
+                    with a description of what happened, what you expected to happen, and any steps
+                    to reproduce the issue. Screenshots are always helpful too.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Tips -->
+        <div class="faq-section">
+            <h2>When Contacting Support</h2>
+
+            <div class="faq-item">
+                <h3>What should I include in my message?</h3>
+                <p>
+                    To help us assist you quickly, please include:
+                </p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li style="font-weight: 300; color: var(--text-light); margin-bottom: 0.3rem;">Your device type (iPhone, Android, iPad)</li>
+                    <li style="font-weight: 300; color: var(--text-light); margin-bottom: 0.3rem;">The app version (found in Settings)</li>
+                    <li style="font-weight: 300; color: var(--text-light); margin-bottom: 0.3rem;">A clear description of the issue or question</li>
+                    <li style="font-weight: 300; color: var(--text-light); margin-bottom: 0.3rem;">Screenshots if relevant</li>
+                    <li style="font-weight: 300; color: var(--text-light);">Steps that led to any problems you encountered</li>
+                </ul>
+            </div>
+
+            <div class="faq-item">
+                <h3>How long until I hear back?</h3>
+                <p>
+                    We aim to respond to all messages within 24-48 hours. During busy periods it may
+                    take a little longer, but we read every message and will get back to you as soon
+                    as we can. If your issue is urgent, please mention that in your subject line.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="IMG-20260112-WA0002.jpg" alt="PerfectDay" class="footer-logo">
+        <p class="footer-brand">PerfectDay Weddings</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+        </div>
+        <p class="footer-text">&copy; 2026 PerfectDay Weddings. All rights reserved.</p>
+    </footer>
+</body>
+</html>
