@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:weddy.app)",
+      "Bash(powershell -File -:*)",
+      "Bash(start \"\" \"c:\\\\Users\\\\oschi\\\\perfectdaytechnologies\\\\perfectdayweddings-waitinglist-website\\\\shortlist\\\\index.html\")",
+      "Bash(dir:*)",
+      "Bash(find:*)"
+    ]
+  }
+}

@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortList: Wedding Venue - Compare Venues Objectively | PerfectDay</title>
+    <meta name="description" content="Score, compare, and shortlist wedding venues with confidence. Rate venues 0-100% across 7 categories. Free app coming soon.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://perfectday-weddings.com/shortlist/">
+    <meta property="og:title" content="PerfectDay ShortList - Compare Wedding Venues Objectively">
+    <meta property="og:description" content="Score, compare, and shortlist wedding venues with confidence. Rate venues 0-100% across 7 categories. Free app coming soon.">
+    <meta property="og:image" content="https://perfectday-weddings.com/IMG-20260110-WA0014.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://perfectday-weddings.com/shortlist/">
+    <meta name="twitter:title" content="PerfectDay ShortList - Compare Wedding Venues Objectively">
+    <meta name="twitter:description" content="Score, compare, and shortlist wedding venues with confidence. Rate venues 0-100% across 7 categories. Free app coming soon.">
+    <meta name="twitter:image" content="https://perfectday-weddings.com/IMG-20260110-WA0014.png">
+
+    <link rel="icon" type="image/png" href="../IMG-20260110-WA0014.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #20B2B7;
+            --terracotta-dark: #1A8F93;
+            --terracotta-light: #38D2D8;
+            --cream: #F0FDFD;
+            --champagne: #B8F0F2;
+            --champagne-dark: #8AE6EA;
+            --charcoal: #2F2F2F;
+            --charcoal-light: #5A5A5A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(240, 253, 253, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(32, 178, 183, 0.15);
+            transition: padding 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding-top: 0.6rem;
+            padding-bottom: 0.6rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: auto;
+        }
+
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .nav-title span {
+            color: var(--terracotta);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Nav Link Underline Animation */
+        .nav-links a:not(.nav-cta) {
+            position: relative;
+        }
+
+        .nav-links a:not(.nav-cta)::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease, left 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .nav-links a:not(.nav-cta):hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-cta {
+            background: var(--terracotta);
+            color: var(--white) !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 25px;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--terracotta-dark) !important;
+            color: var(--white) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            box-shadow: 0 8px 30px rgba(32, 178, 183, 0.25);
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out both;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Hero Emphasis Underline Grow */
+        .hero h1 em::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(32, 178, 183, 0.2);
+            border-radius: 5px;
+            z-index: -1;
+            transform-origin: left;
+            animation: underlineGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+        }
+
+        @keyframes underlineGrow {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        /* Gradient Text Shimmer */
+        .gradient-text {
+            background: linear-gradient(
+                135deg,
+                var(--terracotta-dark) 0%,
+                var(--terracotta) 25%,
+                var(--terracotta-light) 50%,
+                var(--terracotta) 75%,
+                var(--terracotta-dark) 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 200% center; }
+        }
+
+        .hero-app-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--charcoal-light);
+            margin-bottom: 2.5rem;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* App Store Badges */
+        .store-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .store-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            background: rgba(47, 47, 47, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(47, 47, 47, 0.1);
+            opacity: 0.55;
+            cursor: default;
+            position: relative;
+        }
+
+        .store-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--charcoal-light);
+            flex-shrink: 0;
+        }
+
+        .store-badge-text {
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .store-badge-text .badge-small {
+            font-size: 0.65rem;
+            color: var(--charcoal-light);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .store-badge-text .badge-large {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .coming-soon-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--terracotta);
+            color: var(--white);
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Waitlist Form */
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .waitlist-form input[type="email"] {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            border: 2px solid var(--champagne-dark);
+            border-radius: 50px;
+            background: var(--white);
+            color: var(--charcoal);
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .waitlist-form input[type="email"]:focus {
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 4px rgba(32, 178, 183, 0.15);
+        }
+
+        .waitlist-form input[type="email"]::placeholder {
+            color: var(--charcoal-light);
+        }
+
+        .waitlist-form input[type="email"].error {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.15);
+        }
+
+        .email-error-msg {
+            display: none;
+            color: #e74c3c;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-top: -0.25rem;
+        }
+
+        .email-error-msg.show {
+            display: block;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--terracotta);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(32, 178, 183, 0.4);
+            position: relative;
+            overflow: visible;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(32, 178, 183, 0.5);
+        }
+
+        /* CTA Button Pulse Glow */
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            box-shadow: 0 0 25px rgba(32, 178, 183, 0.5);
+            opacity: 0;
+            animation: pulseGlow 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.04); }
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.97) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+        }
+
+        .form-note svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 0.25rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(32, 178, 183, 0.15);
+            border: 2px solid var(--terracotta-light);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--charcoal-light);
+        }
+
+        /* Floating Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.07;
+            filter: blur(40px);
+            animation: float linear infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            width: 350px;
+            height: 350px;
+            background: var(--terracotta);
+            top: 5%;
+            right: -8%;
+            animation-duration: 25s;
+        }
+
+        .floating-shape:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            background: var(--champagne-dark);
+            bottom: 15%;
+            left: -5%;
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+
+        .floating-shape:nth-child(3) {
+            width: 180px;
+            height: 180px;
+            background: var(--terracotta-light);
+            top: 45%;
+            left: 10%;
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+
+        .floating-shape:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            background: var(--champagne);
+            top: 25%;
+            right: 15%;
+            animation-duration: 18s;
+            animation-delay: -8s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -40px) rotate(5deg); }
+            50% { transform: translate(-20px, 25px) rotate(-3deg); }
+            75% { transform: translate(35px, 15px) rotate(4deg); }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--terracotta);
+            opacity: 0.8;
+        }
+
+        .scroll-indicator svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* ===== WAVE DIVIDERS ===== */
+        .wave-divider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            margin-top: -1px;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 60px;
+        }
+
+        .wave-divider.flip svg {
+            transform: scaleY(-1);
+        }
+
+        /* ===== SCROLL REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active,
+        .reveal-left.active,
+        .reveal-right.active,
+        .reveal-scale.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.25s; }
+        .stagger-3 { transition-delay: 0.4s; }
+        .stagger-4 { transition-delay: 0.55s; }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--charcoal-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        /* Glassmorphism Feature Cards */
+        .feature-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(32, 178, 183, 0.1);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Shine Sweep Effect */
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: left 0.7s ease;
+            pointer-events: none;
+        }
+
+        .feature-card:hover::after {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(32, 178, 183, 0.3);
+            box-shadow: 0 25px 60px rgba(32, 178, 183, 0.15);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--terracotta-light) 0%, var(--champagne) 100%);
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--terracotta-dark);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--charcoal-light);
+            line-height: 1.7;
+        }
+
+        /* ===== APP SHOWCASE SECTION ===== */
+        .app-showcase {
+            padding: 6rem 2rem 8rem;
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 50%, var(--white) 100%);
+            overflow: hidden;
+        }
+
+        .showcase-fan {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 520px;
+            margin: 0 auto;
+            perspective: 1200px;
+        }
+
+        .fan-phone {
+            position: absolute;
+            width: 230px;
+            left: 50%;
+            top: 50%;
+            transform-origin: center bottom;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fan-phone .phone-frame {
+            background: #1a1a1a;
+            border-radius: 32px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 6px 20px rgba(32, 178, 183, 0.12);
+        }
+
+        .fan-phone .phone-screen {
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .fan-phone .phone-screen img {
+            width: 100%;
+            display: block;
+            margin-top: -6%;
+        }
+
+        /* Fan positions - back phones fan outward from center */
+        .fan-phone:nth-child(1) {
+            z-index: 1;
+            transform: translate(-50%, -50%) rotate(-18deg) scale(0.78);
+            margin-left: -40px;
+            filter: brightness(0.92);
+        }
+
+        .fan-phone:nth-child(2) {
+            z-index: 2;
+            transform: translate(-50%, -50%) rotate(-9deg) scale(0.88);
+            margin-left: -20px;
+            filter: brightness(0.96);
+        }
+
+        .fan-phone:nth-child(3) {
+            z-index: 5;
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+
+        .fan-phone:nth-child(4) {
+            z-index: 2;
+            transform: translate(-50%, -50%) rotate(9deg) scale(0.88);
+            margin-left: 20px;
+            filter: brightness(0.96);
+        }
+
+        .fan-phone:nth-child(5) {
+            z-index: 1;
+            transform: translate(-50%, -50%) rotate(18deg) scale(0.78);
+            margin-left: 40px;
+            filter: brightness(0.92);
+        }
+
+        /* Center phone shadow emphasis */
+        .fan-phone:nth-child(3) .phone-frame {
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(32, 178, 183, 0.2);
+        }
+
+        /* Hover: lift the center phone */
+        .fan-phone:nth-child(3):hover {
+            transform: translate(-50%, -54%) rotate(0deg) scale(1.04);
+        }
+
+        .fan-phone:nth-child(3):hover .phone-frame {
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3), 0 15px 40px rgba(32, 178, 183, 0.25);
+        }
+
+        @media (max-width: 992px) {
+            .showcase-fan {
+                height: 440px;
+                max-width: 600px;
+            }
+            .fan-phone {
+                width: 190px;
+            }
+            .fan-phone .phone-frame {
+                border-radius: 28px;
+                padding: 8px;
+            }
+            .fan-phone .phone-screen {
+                border-radius: 21px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-showcase {
+                padding: 4rem 1.5rem 6rem;
+            }
+            .showcase-fan {
+                height: 380px;
+                max-width: 400px;
+            }
+            .fan-phone {
+                width: 160px;
+            }
+            .fan-phone .phone-frame {
+                border-radius: 24px;
+                padding: 7px;
+            }
+            .fan-phone .phone-screen {
+                border-radius: 18px;
+            }
+            .fan-phone:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(-14deg) scale(0.75);
+                margin-left: -30px;
+            }
+            .fan-phone:nth-child(2) {
+                transform: translate(-50%, -50%) rotate(-7deg) scale(0.85);
+                margin-left: -15px;
+            }
+            .fan-phone:nth-child(4) {
+                transform: translate(-50%, -50%) rotate(7deg) scale(0.85);
+                margin-left: 15px;
+            }
+            .fan-phone:nth-child(5) {
+                transform: translate(-50%, -50%) rotate(14deg) scale(0.75);
+                margin-left: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-fan {
+                height: 320px;
+            }
+            .fan-phone {
+                width: 140px;
+            }
+            .fan-phone .phone-frame {
+                border-radius: 20px;
+                padding: 6px;
+            }
+            .fan-phone .phone-screen {
+                border-radius: 15px;
+            }
+        }
+
+        /* ===== HOW IT WORKS SECTION ===== */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            position: relative;
+        }
+
+        /* Connector line between steps */
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 42px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--champagne-dark), var(--terracotta-light), var(--champagne-dark));
+            z-index: 0;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 84px;
+            height: 84px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            box-shadow: 0 8px 30px rgba(32, 178, 183, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .step-card:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(32, 178, 183, 0.4);
+        }
+
+        .step-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card p {
+            font-size: 1rem;
+            color: var(--charcoal-light);
+            line-height: 1.7;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        /* Pricing Toggle */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-toggle-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--charcoal-light);
+            transition: color 0.3s ease;
+        }
+
+        .pricing-toggle-label.active {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 56px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--champagne-dark);
+            border-radius: 30px;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--white);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background: var(--terracotta);
+        }
+
+        .toggle-switch input:checked + .toggle-slider::before {
+            transform: translateX(26px);
+        }
+
+        .save-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            background: rgba(32, 178, 183, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(32, 178, 183, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(32, 178, 183, 0.12);
+        }
+
+        /* Shine sweep on pricing cards */
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.7s ease;
+            pointer-events: none;
+        }
+
+        .pricing-card:hover::after {
+            left: 100%;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--terracotta);
+            box-shadow: 0 10px 40px rgba(32, 178, 183, 0.15);
+            padding-top: 3.5rem;
+        }
+
+        .pricing-card.featured:hover {
+            box-shadow: 0 25px 60px rgba(32, 178, 183, 0.22);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 1.25rem;
+            border-radius: 0 0 12px 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.5rem;
+            vertical-align: super;
+        }
+
+        .pricing-period {
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-annual-note {
+            font-size: 0.8rem;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            min-height: 1.2em;
+        }
+
+        .pricing-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--champagne-dark);
+            margin: 0 auto 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            font-size: 0.92rem;
+            color: var(--charcoal-light);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .pricing-features li svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .pricing-features li svg.check {
+            stroke: var(--terracotta);
+        }
+
+        .pricing-features li svg.cross {
+            stroke: var(--champagne-dark);
+        }
+
+        .pricing-features li.disabled {
+            opacity: 0.45;
+        }
+
+        .btn-pricing {
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--terracotta);
+            border: 2px solid var(--terracotta);
+        }
+
+        .btn-outline:hover {
+            background: var(--terracotta);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(32, 178, 183, 0.3);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--terracotta-dark);
+        }
+
+        .btn-white:hover {
+            background: var(--cream);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            width: 45px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .footer-brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--terracotta-light);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--terracotta-light);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(240, 253, 253, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(32, 178, 183, 0.15);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .store-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .waitlist-form input[type="email"],
+            .btn {
+                width: 100%;
+            }
+
+            .features {
+                padding: 4rem 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .how-it-works {
+                padding: 4rem 1.5rem;
+            }
+
+            .pricing {
+                padding: 4rem 1.5rem;
+            }
+
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .floating-shape {
+                display: none;
+            }
+
+            .wave-divider svg {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#hero" class="nav-brand">
+            <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="nav-logo">
+            <span class="nav-title">PerfectDay <span>ShortList</span></span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="../index.html">PerfectDay Weddings</a>
+            <a href="#hero" class="nav-cta">Get Notified</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        <div class="hero-content">
+            <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList: Wedding Venue" class="hero-logo">
+            <h1>Find Your <em class="gradient-text">Perfect Venue</em>, Objectively</h1>
+            <p class="hero-app-name">ShortList: Wedding Venue</p>
+            <p class="hero-subtitle">
+                Score, compare, and shortlist wedding venues with confidence. Rate venues 0-100% across 7 categories and let data guide your decision.
+            </p>
+
+            <!-- App Store Badges -->
+            <div class="store-badges">
+                <div class="store-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    <div class="store-badge-text">
+                        <span class="badge-small">Download on the</span>
+                        <span class="badge-large">App Store</span>
+                    </div>
+                    <span class="coming-soon-label">Coming Soon</span>
+                </div>
+                <div class="store-badge">
+                    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    <div class="store-badge-text">
+                        <span class="badge-small">Get it on</span>
+                        <span class="badge-large">Google Play</span>
+                    </div>
+                    <span class="coming-soon-label">Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="waitlist-form" id="waitlistForm">
+                <form id="emailForm">
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Get Notified</button>
+                    </div>
+                    <p class="email-error-msg" id="emailError"></p>
+                </form>
+                <p class="form-note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    We'll never share your email. You'll receive updates for both ShortList and PerfectDay Weddings.
+                </p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <h3>You're on the list!</h3>
+                <p>We'll notify you when PerfectDay ShortList is ready. Thank you for your interest!</p>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Wave Divider: Hero -> Features -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z" fill="#B8F0F2" fill-opacity="0.5"/>
+            <path d="M0,40 C360,10 720,50 1080,20 C1260,10 1380,30 1440,25 L1440,0 L0,0 Z" fill="#FFFFFF" fill-opacity="0.6"/>
+        </svg>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Everything You Need to Compare Venues</h2>
+                <p>Powerful, objective tools designed to help you make one of the biggest decisions of your wedding.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1: Score & Compare -->
+                <div class="feature-card reveal stagger-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Score &amp; Compare</h3>
+                    <p>Rate venues 0-100% across 7 categories. See scores, value ratings, and category breakdowns at a glance.</p>
+                </div>
+
+                <!-- Feature 2: 50+ Questions -->
+                <div class="feature-card reveal stagger-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h3>50+ Questions</h3>
+                    <p>Comprehensive questionnaire covering Venue, Catering, Accommodation, Logistics, Aesthetics, Services, and Value.</p>
+                </div>
+
+                <!-- Feature 3: Smart Insights -->
+                <div class="feature-card reveal stagger-3">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18h6"></path>
+                            <path d="M10 22h4"></path>
+                            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+                        </svg>
+                    </div>
+                    <h3>Smart Insights</h3>
+                    <p>Discover hidden patterns -- price gaps, similar scores, value leaders, and category winners surfaced automatically.</p>
+                </div>
+
+                <!-- Feature 4: Picker Game -->
+                <div class="feature-card reveal stagger-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 9 8 12 8s5-4 7.5-4a2.5 2.5 0 0 1 0 5H18"></path>
+                            <path d="M12 8v13"></path>
+                            <path d="M6 9h12l-1.5 10a2 2 0 0 1-2 1.5h-5A2 2 0 0 1 7.5 19L6 9z"></path>
+                        </svg>
+                    </div>
+                    <h3>Picker Game</h3>
+                    <p>Can't decide? Our tournament-style swipe game reveals your true preferences through rapid head-to-head choices.</p>
+                </div>
+
+                <!-- Feature 5: 100% Offline -->
+                <div class="feature-card reveal stagger-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>100% Offline</h3>
+                    <p>All your data stays on your device. No account needed, no cloud required. Your venue data is completely private.</p>
+                </div>
+
+                <!-- Feature 6: Export Everything -->
+                <div class="feature-card reveal stagger-3">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                    <h3>Export Everything</h3>
+                    <p>Share your research as JSON, CSV, or beautiful PDF reports. Import data on any new device seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section class="app-showcase">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>See It In Action</h2>
+                <p>Real screenshots from the app. Score venues, compare side-by-side, and let the Picker decide.</p>
+            </div>
+
+            <div class="showcase-fan reveal-scale">
+                <!-- Back-left far -->
+                <div class="fan-phone">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="assets/app-screenshots/Screenshot_20260203_224649_PerfectDay Shortlist.jpg" alt="Import venue" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back-left -->
+                <div class="fan-phone">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="assets/app-screenshots/Screenshot_20260203_224718_PerfectDay Shortlist.jpg" alt="Venues list" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center front (Home) -->
+                <div class="fan-phone">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="assets/app-screenshots/Screenshot_20260203_224732_PerfectDay Shortlist.jpg" alt="ShortList home dashboard" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back-right -->
+                <div class="fan-phone">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="assets/app-screenshots/Screenshot_20260203_224806_PerfectDay Shortlist.jpg" alt="Compare venues" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back-right far -->
+                <div class="fan-phone">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="assets/app-screenshots/Screenshot_20260203_224835_PerfectDay Shortlist.jpg" alt="Picker game" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider: Showcase -> How It Works -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,20 C480,60 960,0 1440,40 L1440,0 L0,0 Z" fill="#FFFFFF"/>
+        </svg>
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>How It Works</h2>
+                <p>Three simple steps to finding your perfect wedding venue.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal stagger-1">
+                    <div class="step-number">1</div>
+                    <h3>Add Your Venues</h3>
+                    <p>Search via Google Places or enter venues manually. Add quotes, capacity, visit dates, and contact details.</p>
+                </div>
+
+                <div class="step-card reveal stagger-2">
+                    <div class="step-number">2</div>
+                    <h3>Score &amp; Compare</h3>
+                    <p>Answer questions about each venue across 7 categories. Watch your scores build and insights appear.</p>
+                </div>
+
+                <div class="step-card reveal stagger-3">
+                    <div class="step-number">3</div>
+                    <h3>Make Your Choice</h3>
+                    <p>Compare venues side-by-side, play the picker game, and export your shortlist with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider: How It Works -> Pricing -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C360,0 720,60 1080,20 C1260,5 1380,35 1440,15 L1440,0 L0,0 Z" fill="#E4F9FA"/>
+        </svg>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Start free. Upgrade when you need more.</p>
+            </div>
+
+            <!-- Monthly / Annual Toggle -->
+            <div class="pricing-toggle reveal">
+                <span class="pricing-toggle-label active" id="labelMonthly">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="pricing-toggle-label" id="labelAnnual">Annual</span>
+                <span class="save-badge">Save up to 32%</span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free -->
+                <div class="pricing-card reveal stagger-1">
+                    <h3>Free</h3>
+                    <div class="pricing-price"><span class="currency">&pound;</span>0</div>
+                    <div class="pricing-period">Free forever</div>
+                    <div class="pricing-annual-note">&nbsp;</div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            2 venues
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Smart Scoring
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Compare
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            JSON Backup
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Dark Mode
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            PDF Reports
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Showdown
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Weighted Scoring
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            CSV Export
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Timeline
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Share Cards
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Accent Colours
+                        </li>
+                    </ul>
+                    <a href="#hero" class="btn btn-outline btn-pricing">Get Notified</a>
+                </div>
+
+                <!-- Plus -->
+                <div class="pricing-card reveal stagger-2">
+                    <h3>Plus</h3>
+                    <div class="pricing-price" data-monthly="3.99" data-annual="33.99"><span class="currency">&pound;</span><span class="price-value">3.99</span></div>
+                    <div class="pricing-period"><span class="period-text">per month</span></div>
+                    <div class="pricing-annual-note"><span class="annual-note-text">&nbsp;</span></div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            4 venues
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Smart Scoring
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Compare
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            JSON Backup
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Dark Mode
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            PDF Reports
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Showdown
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Weighted Scoring
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            CSV Export
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Timeline
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Share Cards
+                        </li>
+                        <li class="disabled">
+                            <svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            Accent Colours
+                        </li>
+                    </ul>
+                    <a href="#hero" class="btn btn-outline btn-pricing">Get Notified</a>
+                </div>
+
+                <!-- Pro (Featured) -->
+                <div class="pricing-card featured reveal stagger-3">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3>Pro</h3>
+                    <div class="pricing-price" data-monthly="7.99" data-annual="64.99"><span class="currency">&pound;</span><span class="price-value">7.99</span></div>
+                    <div class="pricing-period"><span class="period-text">per month</span></div>
+                    <div class="pricing-annual-note"><span class="annual-note-text">&nbsp;</span></div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Unlimited venues
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Smart Scoring
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Compare
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            JSON Backup
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Dark Mode
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            PDF Reports
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Showdown
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Weighted Scoring
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            CSV Export
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Timeline
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Share Cards
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Accent Colours
+                        </li>
+                    </ul>
+                    <a href="#hero" class="btn btn-primary btn-pricing">Get Notified</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider: Pricing -> CTA -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C360,0 720,60 1080,20 C1260,5 1380,35 1440,15 L1440,60 L0,60 Z" fill="#20B2B7"/>
+        </svg>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2>Be the First to Try ShortList</h2>
+            <p>Join our waitlist and we'll let you know the moment PerfectDay ShortList is available.</p>
+            <a href="#hero" class="btn btn-white">Join the Waitlist</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-brand">
+                    <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="footer-logo">
+                    <span class="footer-brand-name">PerfectDay ShortList</span>
+                </div>
+                <p class="footer-tagline">
+                    Compare venues objectively. Choose with confidence.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#hero">Get Notified</a>
+            </div>
+            <div class="footer-column">
+                <h4>PerfectDay</h4>
+                <a href="../index.html">PerfectDay Weddings</a>
+                <a href="#">PerfectDay ShortList</a>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="support.html">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 PerfectDay Technologies. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="support.html">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== MOBILE NAVIGATION TOGGLE =====
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // ===== ENHANCED NAV SCROLL STATE =====
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== SCROLL REVEAL (Intersection Observer) =====
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== EMAIL FORM SUBMISSION =====
+        const emailForm = document.getElementById('emailForm');
+        const waitlistForm = document.getElementById('waitlistForm');
+        const successMessage = document.getElementById('successMessage');
+        const submitBtn = emailForm.querySelector('button[type="submit"]');
+
+        // Email validation helper
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+        }
+
+        const emailInput = emailForm.querySelector('input[type="email"]');
+        const emailError = document.getElementById('emailError');
+
+        // Clear error on input
+        emailInput.addEventListener('input', function() {
+            this.classList.remove('error');
+            emailError.classList.remove('show');
+        });
+
+        emailForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            const originalBtnText = submitBtn.textContent;
+
+            // Validate email
+            if (!email) {
+                emailInput.classList.add('error');
+                emailError.textContent = 'Please enter your email address.';
+                emailError.classList.add('show');
+                emailInput.focus();
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                emailInput.classList.add('error');
+                emailError.textContent = 'Please enter a valid email address.';
+                emailError.classList.add('show');
+                emailInput.focus();
+                return;
+            }
+
+            // Show loading state
+            submitBtn.textContent = 'Joining...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxGWZFCh_0t-ANCKQrcNBe1CgvY3pYj-kjSrdavT1Io0z7f7LXgs7Dv1WL_AzeGVmaJ/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email, source: 'shortlist' })
+                });
+
+                // Hide form and show success message
+                waitlistForm.querySelector('form').style.display = 'none';
+                waitlistForm.querySelector('.form-note').style.display = 'none';
+                successMessage.classList.add('show');
+
+            } catch (error) {
+                console.error('Error:', error);
+                emailError.textContent = 'Something went wrong. Please try again.';
+                emailError.classList.add('show');
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // ===== PRICING TOGGLE (Monthly / Annual) =====
+        const pricingToggle = document.getElementById('pricingToggle');
+        const labelMonthly = document.getElementById('labelMonthly');
+        const labelAnnual = document.getElementById('labelAnnual');
+
+        pricingToggle.addEventListener('change', function() {
+            const isAnnual = this.checked;
+
+            // Update toggle label styles
+            labelMonthly.classList.toggle('active', !isAnnual);
+            labelAnnual.classList.toggle('active', isAnnual);
+
+            // Update pricing cards
+            document.querySelectorAll('.pricing-price[data-monthly]').forEach(priceEl => {
+                const monthly = parseFloat(priceEl.getAttribute('data-monthly'));
+                const annual = parseFloat(priceEl.getAttribute('data-annual'));
+                const priceValueEl = priceEl.querySelector('.price-value');
+                const periodEl = priceEl.closest('.pricing-card').querySelector('.period-text');
+                const annualNoteEl = priceEl.closest('.pricing-card').querySelector('.annual-note-text');
+
+                if (isAnnual) {
+                    // Show annual price per month equivalent
+                    const monthlyEquiv = (annual / 12).toFixed(2);
+                    priceValueEl.textContent = monthlyEquiv;
+                    periodEl.textContent = 'per month';
+
+                    // Calculate savings percentage
+                    const fullYearMonthly = monthly * 12;
+                    const savings = Math.round(((fullYearMonthly - annual) / fullYearMonthly) * 100);
+                    annualNoteEl.textContent = '\u00A3' + annual.toFixed(2) + '/yr \u2014 save ' + savings + '%';
+                } else {
+                    priceValueEl.textContent = monthly.toFixed(2);
+                    periodEl.textContent = 'per month';
+                    annualNoteEl.innerHTML = '&nbsp;';
+                }
+            });
+        });
+
+        // ===== PARALLAX-LITE ON HERO FLOATING SHAPES =====
+        const hero = document.querySelector('.hero');
+        const floatingShapes = document.querySelectorAll('.floating-shape');
+
+        if (hero && floatingShapes.length > 0) {
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                floatingShapes.forEach((shape, i) => {
+                    const speed = (i + 1) * 15;
+                    shape.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
+                });
+            });
+
+            hero.addEventListener('mouseleave', () => {
+                floatingShapes.forEach(shape => {
+                    shape.style.transition = 'transform 0.6s ease';
+                    shape.style.transform = 'translate(0, 0)';
+                    setTimeout(() => { shape.style.transition = ''; }, 600);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

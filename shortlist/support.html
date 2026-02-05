@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - PerfectDay ShortList</title>
+    <meta name="description" content="Get help and support for PerfectDay ShortList venue comparison app.">
+    <link rel="icon" type="image/png" href="../IMG-20260110-WA0014.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #20B2B7;
+            --terracotta-dark: #1A8F93;
+            --terracotta-light: #38D2D8;
+            --ivory: #F0FDFD;
+            --champagne: #B8F0F2;
+            --champagne-dark: #8AE6EA;
+            --charcoal: #2F2F2F;
+            --charcoal-light: #5A5A5A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--ivory);
+            color: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--ivory);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(32, 178, 183, 0.2);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: auto;
+        }
+
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .nav-title span {
+            color: var(--terracotta);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-intro {
+            font-size: 1.1rem;
+            color: var(--charcoal-light);
+            margin-bottom: 3rem;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(145deg, var(--white) 0%, var(--champagne) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border: 1px solid var(--champagne-dark);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--terracotta-light) 0%, var(--champagne) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--terracotta-dark);
+        }
+
+        .contact-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--charcoal-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(32, 178, 183, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(32, 178, 183, 0.4);
+        }
+
+        .contact-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--champagne);
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--terracotta-light);
+        }
+
+        .faq-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--terracotta-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--charcoal-light);
+            line-height: 1.7;
+        }
+
+        .faq-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .faq-item li {
+            font-weight: 400;
+            color: var(--charcoal-light);
+            margin-bottom: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo {
+            width: 40px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .footer-brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--terracotta-light);
+        }
+
+        .footer-bottom {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 3rem 1.5rem;
+            }
+
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="../IMG-20260110-WA0014.png" alt="PerfectDay" class="nav-logo">
+            <span class="nav-title">Perfect<span>Day</span> ShortList</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Back to ShortList</a>
+            <a href="../index.html">PerfectDay Weddings</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Support</h1>
+        <p class="page-intro">We're here to help you find your perfect wedding venue.</p>
+
+        <div class="contact-card">
+            <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </div>
+            <h2>Get in Touch</h2>
+            <p>
+                Have questions about PerfectDay ShortList? We'd love to hear from you.
+                Whether you need help, have feedback, or just want to say hello.
+            </p>
+            <a href="mailto:shortlist@perfectday-weddings.com" class="contact-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Email Us
+            </a>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>When will PerfectDay ShortList be available?</h3>
+                <p>
+                    We're putting the finishing touches on the app and expect to launch on both
+                    the App Store and Google Play soon. Join our waitlist to be notified the moment
+                    it's available.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is PerfectDay ShortList free to use?</h3>
+                <p>
+                    Yes! The free plan lets you compare up to 2 venues with full scoring and
+                    questionnaire access. We also offer Plus (&pound;3.99/mo) and Pro (&pound;7.99/mo)
+                    plans for couples who want to compare more venues and access premium features.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does venue scoring work?</h3>
+                <p>
+                    You answer 50+ questions about each venue across 7 categories: Venue, Catering,
+                    Accommodation, Logistics, Aesthetics, Services, and Value. Each venue gets an
+                    objective score from 0-100%, making comparison straightforward and data-driven.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data private?</h3>
+                <p>
+                    Absolutely. All your venue data is stored locally on your device &mdash; we never
+                    upload it to any server. No account is required, and you can export or delete
+                    your data at any time.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I export my venue comparisons?</h3>
+                <p>
+                    Yes! All users can export to JSON. Plus subscribers can export PDF reports, and
+                    Pro subscribers can also export to CSV. Your data is always yours.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the Picker Game?</h3>
+                <p>
+                    The Picker Game (Pro feature) is a tournament-style decision helper. You're shown
+                    two venues at a time and swipe to pick your favourite. After several rounds, a
+                    champion is crowned &mdash; helping reveal your true preferences beyond the numbers.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's the difference between ShortList and PerfectDay Weddings?</h3>
+                <p>
+                    PerfectDay ShortList focuses specifically on venue comparison and selection.
+                    PerfectDay Weddings is our full wedding planning app covering budgets, guests,
+                    timelines, and more. They're designed to work together &mdash; shortlist your
+                    venue first, then plan your wedding!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="../IMG-20260110-WA0014.png" alt="PerfectDay" class="footer-logo">
+                <span class="footer-brand-name">PerfectDay ShortList</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="../index.html">PerfectDay Weddings</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 PerfectDay Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

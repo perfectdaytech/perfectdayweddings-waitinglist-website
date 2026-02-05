@@ -32,9 +32,9 @@
             --sage: #8FAE9A;
             --sage-dark: #6B8C76;
             --sage-light: #A8C4B2;
-            --ivory: #F7F5F0;
-            --champagne: #E8DCC7;
-            --champagne-dark: #D4C4A8;
+            --ivory: #F5F9F6;
+            --champagne: #D4E4D9;
+            --champagne-dark: #B8D4BF;
             --charcoal: #2F2F2F;
             --charcoal-light: #5A5A5A;
             --white: #FFFFFF;
@@ -77,21 +77,10 @@
             animation: confetti-fall linear infinite;
         }
 
-        .confetti.heart {
-            font-size: 12px;
-        }
-
-        .confetti.dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-        }
-
-        .confetti.leaf {
-            width: 8px;
-            height: 8px;
-            border-radius: 0 50% 50% 50%;
-            transform: rotate(45deg);
+        .confetti img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         @keyframes confetti-fall {
@@ -117,7 +106,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(247, 245, 240, 0.95);
+            background: rgba(245, 249, 246, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: 1rem 2rem;
@@ -210,31 +199,9 @@
             align-items: center;
             text-align: center;
             padding: 8rem 2rem 4rem;
-            background: linear-gradient(180deg, var(--ivory) 0%, var(--white) 50%, var(--champagne) 100%);
+            background: var(--white);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(143, 174, 154, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 10%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(232, 220, 199, 0.3) 0%, transparent 70%);
-            border-radius: 50%;
         }
 
         .hero-content {
@@ -270,6 +237,17 @@
             color: var(--sage);
         }
 
+        .hero-app-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--sage);
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
         .hero-subtitle {
             font-size: 1.2rem;
             font-weight: 400;
@@ -280,6 +258,67 @@
             margin-right: auto;
             line-height: 1.8;
             animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        /* App Store Badges */
+        .store-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .store-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            background: rgba(47, 47, 47, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(47, 47, 47, 0.1);
+            opacity: 0.55;
+            cursor: default;
+            position: relative;
+        }
+
+        .store-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--charcoal-light);
+            flex-shrink: 0;
+        }
+
+        .store-badge-text {
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .store-badge-text .badge-small {
+            font-size: 0.65rem;
+            color: var(--charcoal-light);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .store-badge-text .badge-large {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .coming-soon-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--sage);
+            color: var(--white);
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         /* Waitlist Form */
@@ -318,6 +357,23 @@
 
         .waitlist-form input[type="email"]::placeholder {
             color: var(--charcoal-light);
+        }
+
+        .waitlist-form input[type="email"].error {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.15);
+        }
+
+        .email-error-msg {
+            display: none;
+            color: #e74c3c;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-top: -0.25rem;
+        }
+
+        .email-error-msg.show {
+            display: block;
         }
 
         .btn {
@@ -810,6 +866,11 @@
                 font-size: 1rem;
             }
 
+            .store-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .form-row {
                 flex-direction: column;
             }
@@ -866,6 +927,561 @@
             .scroll-indicator {
                 display: none;
             }
+
+            .floating-shape {
+                display: none;
+            }
+        }
+
+        /* ===== PREMIUM ANIMATIONS & EFFECTS ===== */
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active,
+        .reveal-left.active,
+        .reveal-right.active,
+        .reveal-scale.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.25s; }
+        .stagger-3 { transition-delay: 0.4s; }
+        .stagger-4 { transition-delay: 0.55s; }
+
+        /* Gradient Text Shimmer */
+        .gradient-text {
+            background: linear-gradient(
+                135deg,
+                var(--sage-dark) 0%,
+                var(--sage) 25%,
+                var(--champagne-dark) 50%,
+                var(--sage) 75%,
+                var(--sage-dark) 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 200% center; }
+        }
+
+        /* Floating Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.07;
+            filter: blur(40px);
+            animation: float linear infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            width: 350px;
+            height: 350px;
+            background: var(--sage);
+            top: 5%;
+            right: -8%;
+            animation-duration: 25s;
+        }
+
+        .floating-shape:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            background: var(--champagne-dark);
+            bottom: 15%;
+            left: -5%;
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+
+        .floating-shape:nth-child(3) {
+            width: 180px;
+            height: 180px;
+            background: var(--sage-light);
+            top: 45%;
+            left: 10%;
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+
+        .floating-shape:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            background: var(--champagne);
+            top: 25%;
+            right: 15%;
+            animation-duration: 18s;
+            animation-delay: -8s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -40px) rotate(5deg); }
+            50% { transform: translate(-20px, 25px) rotate(-3deg); }
+            75% { transform: translate(35px, 15px) rotate(4deg); }
+        }
+
+        /* Wave Section Dividers */
+        .wave-divider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            margin-top: -1px;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 60px;
+        }
+
+        .wave-divider.flip svg {
+            transform: scaleY(-1);
+        }
+
+        /* Enhanced Feature Cards — Glassmorphism + Shine */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(143, 174, 154, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: left 0.7s ease;
+            pointer-events: none;
+        }
+
+        .feature-card:hover::after {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(143, 174, 154, 0.3);
+            box-shadow: 0 25px 60px rgba(143, 174, 154, 0.18);
+        }
+
+        /* CTA Button Pulse Glow */
+        .btn-primary {
+            position: relative;
+            overflow: visible;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            box-shadow: 0 0 25px rgba(143, 174, 154, 0.5);
+            opacity: 0;
+            animation: pulseGlow 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.04); }
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.97) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        /* Enhanced About Image Hover */
+        .about-image {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px) rotate(1.5deg);
+            box-shadow: 0 35px 80px rgba(143, 174, 154, 0.3);
+        }
+
+        /* About Feature Badge Hover */
+        .about-feature {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .about-feature:hover {
+            background: var(--sage);
+            color: var(--white);
+            border-color: var(--sage);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(143, 174, 154, 0.3);
+        }
+
+        .about-feature:hover svg {
+            stroke: var(--white);
+        }
+
+        /* Stats / Social Proof Section */
+        .stats-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .stats-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stats-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .stats-header p {
+            font-size: 1.1rem;
+            color: var(--charcoal-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 249, 246, 0.95));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(143, 174, 154, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(143, 174, 154, 0.15);
+            border-color: rgba(143, 174, 154, 0.25);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--sage-dark);
+            margin-bottom: 0.5rem;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--charcoal-light);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        /* Enhanced Nav Scroll */
+        nav.scrolled {
+            padding-top: 0.6rem;
+            padding-bottom: 0.6rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Nav Link Underline Animation */
+        .nav-links a:not(.nav-cta) {
+            position: relative;
+        }
+
+        .nav-links a:not(.nav-cta)::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--sage);
+            transition: width 0.3s ease, left 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .nav-links a:not(.nav-cta):hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Emphasis Underline */
+        .hero h1 em {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 em::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(143, 174, 154, 0.2);
+            border-radius: 5px;
+            z-index: -1;
+            transform-origin: left;
+            animation: underlineGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+        }
+
+        @keyframes underlineGrow {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        /* ShortList Companion App Section */
+        .shortlist-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #F0FDFD 0%, #E4F9FA 50%, #F0FDFD 100%);
+            position: relative;
+        }
+
+        .shortlist-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .shortlist-app-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            box-shadow: 0 6px 25px rgba(32, 178, 183, 0.25);
+            margin: 0 auto 1.25rem;
+            display: block;
+        }
+
+        .shortlist-badge {
+            display: inline-block;
+            background: rgba(32, 178, 183, 0.12);
+            color: #20B2B7;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .shortlist-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .shortlist-header h2 em {
+            font-style: italic;
+            color: #20B2B7;
+        }
+
+        .shortlist-header p {
+            font-size: 1.1rem;
+            color: var(--charcoal-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .shortlist-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .shortlist-feature {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 16px;
+            border: 1px solid rgba(32, 178, 183, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shortlist-feature::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.7s ease;
+            pointer-events: none;
+        }
+
+        .shortlist-feature:hover::after {
+            left: 100%;
+        }
+
+        .shortlist-feature:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(32, 178, 183, 0.15);
+            border-color: rgba(32, 178, 183, 0.3);
+        }
+
+        .shortlist-feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #38D2D8 0%, #B8F0F2 100%);
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+        }
+
+        .shortlist-feature:hover .shortlist-feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .shortlist-feature-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #1A8F93;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .shortlist-feature h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .shortlist-feature p {
+            font-size: 0.95rem;
+            color: var(--charcoal-light);
+            line-height: 1.7;
+        }
+
+        .shortlist-cta {
+            text-align: center;
+        }
+
+        .btn-terracotta {
+            background: #20B2B7;
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(32, 178, 183, 0.35);
+        }
+
+        .btn-terracotta:hover {
+            background: #1A8F93;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(32, 178, 183, 0.45);
+        }
+
+        @media (max-width: 992px) {
+            .shortlist-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .shortlist-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .shortlist-section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* Responsive overrides for new elements */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .wave-divider svg {
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -882,6 +1498,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#features">Features</a>
             <a href="#about">About</a>
+            <a href="shortlist/index.html">ShortList App</a>
             <a href="support.html">Contact</a>
             <a href="#hero" class="nav-cta">Join Waitlist</a>
         </div>
@@ -894,12 +1511,39 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <div class="floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
         <div class="hero-content">
             <img src="IMG-20260110-WA0014.png" alt="PerfectDay Weddings" class="hero-logo">
-            <h1>Plan Your <em>Perfect Day</em> — Without the Stress</h1>
+            <h1>Plan Your <em class="gradient-text">Perfect Day</em> — Without the Stress</h1>
+            <p class="hero-app-name">PerfectDay Weddings</p>
             <p class="hero-subtitle">
                 All your planning tools in one beautiful app — budget, guests, timelines & more. Get early access.
             </p>
+
+            <!-- App Store Badges -->
+            <div class="store-badges">
+                <div class="store-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    <div class="store-badge-text">
+                        <span class="badge-small">Download on the</span>
+                        <span class="badge-large">App Store</span>
+                    </div>
+                    <span class="coming-soon-label">Coming Soon</span>
+                </div>
+                <div class="store-badge">
+                    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    <div class="store-badge-text">
+                        <span class="badge-small">Get it on</span>
+                        <span class="badge-large">Google Play</span>
+                    </div>
+                    <span class="coming-soon-label">Coming Soon</span>
+                </div>
+            </div>
 
             <div class="waitlist-form" id="waitlistForm">
                 <form id="emailForm">
@@ -907,12 +1551,13 @@
                         <input type="email" name="email" placeholder="Enter your email" required>
                         <button type="submit" class="btn btn-primary">Join the Waitlist</button>
                     </div>
+                    <p class="email-error-msg" id="emailError"></p>
                 </form>
                 <p class="form-note">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
-                    We'll never share your email.
+                    We'll never share your email. You'll receive updates for both PerfectDay Weddings and ShortList.
                 </p>
             </div>
 
@@ -929,16 +1574,24 @@
         </div>
     </section>
 
+    <!-- Wave Divider: Hero → Features -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z" fill="#D4E4D9" fill-opacity="0.5"/>
+            <path d="M0,40 C360,10 720,50 1080,20 C1260,10 1380,30 1440,25 L1440,0 L0,0 Z" fill="#FFFFFF" fill-opacity="0.6"/>
+        </svg>
+    </div>
+
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Everything You Need to Plan Your Day</h2>
                 <p>Powerful, intuitive tools designed to make wedding planning a joy, not a chore.</p>
             </div>
 
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card reveal stagger-1">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="7" height="7"></rect>
@@ -951,7 +1604,7 @@
                     <p>See everything at a glance. Your countdown, budget, tasks, and guest responses — all in one beautiful view.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card reveal stagger-2">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="12" y1="1" x2="12" y2="23"></line>
@@ -962,7 +1615,7 @@
                     <p>Stay on track & under budget. Track every expense, monitor payments, and avoid overspending with ease.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card reveal stagger-3">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -978,11 +1631,18 @@
         </div>
     </section>
 
+    <!-- Wave Divider: Features → About -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,20 C480,60 960,0 1440,40 L1440,0 L0,0 Z" fill="#FFFFFF"/>
+        </svg>
+    </div>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text reveal-left">
                     <h2>Wedding Planning Should Be <em>Joyful</em></h2>
                     <p>
                         We believe planning your wedding should be as special as the day itself. That's why we created PerfectDay — a single, beautiful app that replaces scattered spreadsheets, endless notes, and the stress that comes with them.
@@ -1017,7 +1677,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="about-visual">
+                <div class="about-visual reveal-right">
                     <div class="about-image">
                         <img src="IMG-20260110-WA0014.png" alt="PerfectDay App">
                     </div>
@@ -1026,9 +1686,93 @@
         </div>
     </section>
 
+    <!-- ShortList Companion App Section -->
+    <section class="shortlist-section" id="shortlist">
+        <div class="container">
+            <div class="shortlist-header reveal">
+                <img src="shortlist/assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="shortlist-app-logo">
+                <span class="shortlist-badge">Companion App</span>
+                <h2>Meet PerfectDay <em>ShortList</em></h2>
+                <p>Before you plan the wedding, find the perfect venue. Score, compare, and shortlist venues objectively.</p>
+            </div>
+
+            <div class="shortlist-features">
+                <div class="shortlist-feature reveal stagger-1">
+                    <div class="shortlist-feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Score 0-100%</h3>
+                    <p>Rate each venue across 7 categories with 50+ guided questions. Get an objective score you can trust.</p>
+                </div>
+
+                <div class="shortlist-feature reveal stagger-2">
+                    <div class="shortlist-feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Smart Insights</h3>
+                    <p>Discover hidden patterns — price gaps, value leaders, and category winners surfaced automatically.</p>
+                </div>
+
+                <div class="shortlist-feature reveal stagger-3">
+                    <div class="shortlist-feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>100% Private</h3>
+                    <p>All data stays on your device. No account needed, no cloud, no tracking. Your venue data is yours.</p>
+                </div>
+            </div>
+
+            <div class="shortlist-cta reveal">
+                <a href="shortlist/index.html" class="btn btn-terracotta">Explore ShortList &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Social Proof Section -->
+    <section class="stats-section">
+        <div class="stats-header reveal">
+            <h2>Why Couples Choose PerfectDay</h2>
+            <p>Join a growing community of couples planning their dream wedding</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card reveal stagger-1">
+                <span class="stat-icon">&#9889;</span>
+                <span class="stat-number" data-target="50" data-suffix="+">0</span>
+                <span class="stat-label">Planning Features</span>
+            </div>
+            <div class="stat-card reveal stagger-2">
+                <span class="stat-icon">&#128274;</span>
+                <span class="stat-number" data-target="100" data-suffix="%">0</span>
+                <span class="stat-label">Private &amp; Secure</span>
+            </div>
+            <div class="stat-card reveal stagger-3">
+                <span class="stat-icon">&#10024;</span>
+                <span class="stat-number" data-target="1" data-suffix=" App">0</span>
+                <span class="stat-label">For Your Entire Journey</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider: Stats → CTA -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C360,0 720,60 1080,20 C1260,5 1380,35 1440,15 L1440,60 L0,60 Z" fill="#8FAE9A"/>
+        </svg>
+    </div>
+
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
+        <div class="cta-content reveal">
             <h2>Be the First to Experience PerfectDay</h2>
             <p>Join couples who are making wedding planning a beautiful experience, not a stressful one.</p>
             <a href="#hero" class="btn btn-white">Join the Waitlist — Be First Up the Aisle</a>
@@ -1071,6 +1815,7 @@
                 <a href="#features">Features</a>
                 <a href="#about">About</a>
                 <a href="#hero">Join Waitlist</a>
+                <a href="shortlist/index.html">PerfectDay ShortList</a>
             </div>
             <div class="footer-column">
                 <h4>Support</h4>
@@ -1115,11 +1860,42 @@
         const successMessage = document.getElementById('successMessage');
         const submitBtn = emailForm.querySelector('button[type="submit"]');
 
+        // Email validation helper
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+        }
+
+        const emailInput = emailForm.querySelector('input[type="email"]');
+        const emailError = document.getElementById('emailError');
+
+        // Clear error on input
+        emailInput.addEventListener('input', function() {
+            this.classList.remove('error');
+            emailError.classList.remove('show');
+        });
+
         emailForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const email = this.querySelector('input[type="email"]').value;
+            const email = emailInput.value.trim();
             const originalBtnText = submitBtn.textContent;
+
+            // Validate email
+            if (!email) {
+                emailInput.classList.add('error');
+                emailError.textContent = 'Please enter your email address.';
+                emailError.classList.add('show');
+                emailInput.focus();
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                emailInput.classList.add('error');
+                emailError.textContent = 'Please enter a valid email address.';
+                emailError.classList.add('show');
+                emailInput.focus();
+                return;
+            }
 
             // Show loading state
             submitBtn.textContent = 'Joining...';
@@ -1142,7 +1918,8 @@
 
             } catch (error) {
                 console.error('Error:', error);
-                alert('Something went wrong. Please try again.');
+                emailError.textContent = 'Something went wrong. Please try again.';
+                emailError.classList.add('show');
                 submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
             }
@@ -1164,35 +1941,34 @@
             });
         });
 
-        // Navbar background on scroll
+        // Enhanced Navbar on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                nav.classList.add('scrolled');
             } else {
-                nav.style.boxShadow = 'none';
+                nav.classList.remove('scrolled');
             }
         });
 
-        // Gentle Confetti Animation
+        // Heart Logo Confetti Animation
         function createConfetti() {
             const container = document.getElementById('confetti');
-            const colors = ['#8FAE9A', '#6B8C76', '#A8C4B2', '#E8DCC7', '#D4C4A8', '#F7F5F0'];
-            const types = ['heart', 'dot', 'leaf'];
+            const sizes = [14, 18, 22, 26, 30];
 
             function createPiece() {
                 const piece = document.createElement('div');
                 piece.className = 'confetti';
 
-                const type = types[Math.floor(Math.random() * types.length)];
-                piece.classList.add(type);
+                const size = sizes[Math.floor(Math.random() * sizes.length)];
+                piece.style.width = size + 'px';
+                piece.style.height = size + 'px';
 
-                if (type === 'heart') {
-                    piece.innerHTML = '♥';
-                    piece.style.color = colors[Math.floor(Math.random() * colors.length)];
-                } else {
-                    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                }
+                const img = document.createElement('img');
+                img.src = 'IMG-20260110-WA0014.png';
+                img.alt = '';
+                img.loading = 'lazy';
+                piece.appendChild(img);
 
                 // Random position and timing
                 piece.style.left = Math.random() * 100 + 'vw';
@@ -1207,17 +1983,101 @@
                 }, 25000);
             }
 
-            // Create initial pieces
-            for (let i = 0; i < 15; i++) {
-                setTimeout(createPiece, i * 300);
+            // Create initial burst of pieces
+            for (let i = 0; i < 35; i++) {
+                setTimeout(createPiece, i * 200);
             }
 
-            // Continue creating pieces gently
-            setInterval(createPiece, 2000);
+            // Continue creating pieces steadily
+            setInterval(createPiece, 800);
         }
 
         // Start confetti when page loads
         document.addEventListener('DOMContentLoaded', createConfetti);
+
+        // ===== SCROLL REVEAL (Intersection Observer) =====
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== ANIMATED COUNTER FOR STATS =====
+        const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+        let countersStarted = false;
+
+        function animateCounters() {
+            if (countersStarted) return;
+            countersStarted = true;
+
+            statNumbers.forEach(el => {
+                const target = parseInt(el.getAttribute('data-target'));
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                const steps = 60;
+                const stepTime = duration / steps;
+                let current = 0;
+                const increment = target / steps;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.round(current).toLocaleString() + suffix;
+                }, stepTime);
+            });
+        }
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            statsObserver.observe(statsSection);
+        }
+
+        // ===== PARALLAX-LITE ON HERO FLOATING SHAPES =====
+        const hero = document.querySelector('.hero');
+        const floatingShapes = document.querySelectorAll('.floating-shape');
+
+        if (hero && floatingShapes.length > 0) {
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                floatingShapes.forEach((shape, i) => {
+                    const speed = (i + 1) * 15;
+                    shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
+
+            hero.addEventListener('mouseleave', () => {
+                floatingShapes.forEach(shape => {
+                    shape.style.transition = 'transform 0.6s ease';
+                    shape.style.transform = 'translate(0, 0)';
+                    setTimeout(() => { shape.style.transition = ''; }, 600);
+                });
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - PerfectDay ShortList</title>
+    <meta name="description" content="Terms of Service for PerfectDay ShortList venue comparison app.">
+    <link rel="icon" type="image/png" href="../IMG-20260110-WA0014.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #20B2B7;
+            --terracotta-dark: #1A8F93;
+            --terracotta-light: #38D2D8;
+            --ivory: #F0FDFD;
+            --champagne: #B8F0F2;
+            --champagne-dark: #8AE6EA;
+            --charcoal: #2F2F2F;
+            --charcoal-light: #5A5A5A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--ivory);
+            color: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--ivory);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(32, 178, 183, 0.2);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: auto;
+        }
+
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .nav-title span {
+            color: var(--terracotta);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--charcoal-light);
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--champagne);
+        }
+
+        .content-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-bottom: 0.75rem;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--charcoal-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--charcoal-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .content-section a {
+            color: var(--terracotta-dark);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .content-section a:hover {
+            color: var(--terracotta);
+        }
+
+        .highlight-box {
+            background: var(--white);
+            border-left: 4px solid var(--terracotta);
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo {
+            width: 40px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .footer-brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--terracotta-light);
+        }
+
+        .footer-bottom {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 3rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="../IMG-20260110-WA0014.png" alt="PerfectDay ShortList" class="nav-logo">
+            <span class="nav-title">PerfectDay <span>ShortList</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Back to ShortList</a>
+            <a href="../index.html">PerfectDay Weddings</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Terms of Service</h1>
+        <p class="last-updated">Last updated: February 5, 2026</p>
+
+        <div class="content-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+                By downloading, installing, or using PerfectDay ShortList ("the App"), you agree to be bound
+                by these Terms of Service. If you do not agree to these terms, please do not use the App.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>2. Description of Service</h2>
+            <p>
+                PerfectDay ShortList is a mobile application that helps users compare and evaluate wedding
+                venues through structured questionnaires and scoring. The App provides tools for objective
+                venue comparison but does not guarantee the accuracy of venue information or suitability
+                of any venue.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>3. User Responsibilities</h2>
+            <p>
+                When using PerfectDay ShortList, you agree to the following responsibilities:
+            </p>
+            <ul>
+                <li>You are responsible for the accuracy of venue data you enter</li>
+                <li>You must not use the App for any unlawful purpose</li>
+                <li>You are responsible for maintaining backups of your data</li>
+                <li>You must comply with all applicable laws when using the App</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>4. Subscriptions & Payments</h2>
+            <p>
+                The App offers free and paid subscription tiers (Plus and Pro). Subscriptions are billed
+                through the Apple App Store or Google Play Store.
+            </p>
+            <div class="highlight-box">
+                <p>
+                    Prices: Plus &pound;3.99/month or &pound;33.99/year &bull; Pro &pound;7.99/month or &pound;64.99/year
+                </p>
+            </div>
+            <ul>
+                <li>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date</li>
+                <li>Refunds are handled by Apple or Google per their respective policies</li>
+                <li>Upon downgrade, a 14-day grace period applies for venues exceeding your tier limit</li>
+                <li>You can manage or cancel subscriptions through your device's app store settings</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>5. Intellectual Property</h2>
+            <p>
+                PerfectDay ShortList and all of its content, features, and functionality are owned by
+                PerfectDay Technologies. You may not copy, modify, or distribute the App or any part
+                of its content.
+            </p>
+            <p>
+                Your venue data remains your property at all times. You retain full ownership of all
+                content and data you create within the App.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>6. Data & Privacy</h2>
+            <p>
+                PerfectDay ShortList is designed with your privacy in mind:
+            </p>
+            <ul>
+                <li>All venue data is stored locally on your device</li>
+                <li>We do not access or store your personal data</li>
+                <li>See our <a href="privacy.html">Privacy Policy</a> for full details</li>
+                <li>You can export or delete your data at any time</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>7. Third-Party Services</h2>
+            <p>
+                The App may integrate with or rely upon third-party services:
+            </p>
+            <ul>
+                <li>The App may use Google Places API for venue search functionality</li>
+                <li>In-app purchases are processed by Apple or Google</li>
+                <li>We are not responsible for third-party service availability or terms</li>
+            </ul>
+            <p>
+                Your use of third-party services is subject to their respective terms and conditions
+                and privacy policies.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>8. Disclaimers</h2>
+            <p>
+                PerfectDay ShortList is provided "as is" and "as available" without warranties of any
+                kind, either express or implied, including but not limited to implied warranties of
+                merchantability, fitness for a particular purpose, and non-infringement.
+            </p>
+            <ul>
+                <li>We do not guarantee the accuracy of venue scores or comparisons</li>
+                <li>Venue information entered by users is not verified by us</li>
+                <li>We are not responsible for any decisions made based on App data</li>
+                <li>We are not liable for data loss; users should regularly export backups</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>9. Limitation of Liability</h2>
+            <p>
+                To the maximum extent permitted by applicable law, PerfectDay Technologies and its
+                affiliates, officers, employees, and agents shall not be liable for any indirect,
+                incidental, special, consequential, or punitive damages arising from your use of the App.
+            </p>
+            <p>
+                Our total liability for any claims arising from your use of the App shall not exceed
+                the amount you paid for the App in the twelve months preceding the claim.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>10. Termination</h2>
+            <p>
+                You may stop using PerfectDay ShortList at any time by uninstalling the App. We may
+                suspend or terminate your access to the App if you violate these Terms of Service.
+            </p>
+            <p>
+                Upon termination, your local data remains on your device. Your licence to use the
+                App ends upon termination.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>11. Changes to Terms</h2>
+            <p>
+                We reserve the right to modify these Terms of Service at any time. Continued use of
+                the App after changes take effect constitutes acceptance of the revised terms.
+            </p>
+            <p>
+                Material changes will be communicated through the App. If you do not agree to the
+                changes, you should stop using the App.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>12. Governing Law</h2>
+            <p>
+                These Terms of Service shall be governed by and construed in accordance with the
+                laws of England and Wales. Any disputes arising from these terms or your use of the
+                App shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>13. Contact</h2>
+            <p>
+                If you have any questions about these Terms of Service, please contact us at:
+            </p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:shortlist@perfectday-weddings.com">shortlist@perfectday-weddings.com</a>
+            </p>
+            <p>
+                PerfectDay Technologies
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="../IMG-20260110-WA0014.png" alt="PerfectDay ShortList" class="footer-logo">
+                <span class="footer-brand-name">PerfectDay ShortList</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="support.html">Support</a>
+                <a href="../index.html">PerfectDay Weddings</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 PerfectDay Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
