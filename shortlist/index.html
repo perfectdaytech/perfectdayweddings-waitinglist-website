@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="Score, compare, and shortlist wedding venues with confidence. Rate venues 0-100% across 7 categories. Free app coming soon.">
     <meta name="twitter:image" content="https://perfectday-weddings.com/IMG-20260110-WA0014.png">
 
-    <link rel="icon" type="image/png" href="../IMG-20260110-WA0014.png">
+    <link rel="icon" type="image/png" href="assets/Logos/Shortlist_logo_canva_500x500_complete.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -89,6 +89,7 @@
         .nav-logo {
             width: 40px;
             height: auto;
+            border-radius: 10px;
         }
 
         .nav-title {
@@ -673,6 +674,14 @@
             margin: 0 auto;
         }
 
+        .pricing-pitch {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--terracotta-dark);
+            font-style: italic;
+        }
+
         /* ===== FEATURES SECTION ===== */
         .features {
             padding: 6rem 2rem;
@@ -1170,7 +1179,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .pricing-annual-note {
+        .pricing-quarterly-note {
             font-size: 0.8rem;
             color: var(--terracotta);
             font-weight: 600;
@@ -1658,7 +1667,7 @@
                         </svg>
                     </div>
                     <h3>Smart Insights</h3>
-                    <p>Discover hidden patterns -- price gaps, similar scores, value leaders, and category winners surfaced automatically.</p>
+                    <p>Discover hidden patterns - price gaps, similar scores, value leaders, and category winners surfaced automatically.</p>
                 </div>
 
                 <!-- Feature 4: Picker Game -->
@@ -1809,17 +1818,18 @@
             <div class="section-header reveal">
                 <h2>Simple, Transparent Pricing</h2>
                 <p>Start free. Upgrade when you need more.</p>
+                <p class="pricing-pitch">Most couples choose their venue in 4-8 weeks. Go quarterly and get a month on us - 3 months for the price of 2.</p>
             </div>
 
-            <!-- Monthly / Annual Toggle -->
+            <!-- Monthly / Quarterly Toggle -->
             <div class="pricing-toggle reveal">
-                <span class="pricing-toggle-label active" id="labelMonthly">Monthly</span>
+                <span class="pricing-toggle-label" id="labelMonthly">Monthly</span>
                 <label class="toggle-switch">
-                    <input type="checkbox" id="pricingToggle">
+                    <input type="checkbox" id="pricingToggle" checked>
                     <span class="toggle-slider"></span>
                 </label>
-                <span class="pricing-toggle-label" id="labelAnnual">Annual</span>
-                <span class="save-badge">Save up to 32%</span>
+                <span class="pricing-toggle-label active" id="labelQuarterly">Quarterly</span>
+                <span class="save-badge">Save 33%</span>
             </div>
 
             <div class="pricing-grid">
@@ -1828,7 +1838,7 @@
                     <h3>Free</h3>
                     <div class="pricing-price"><span class="currency">&pound;</span>0</div>
                     <div class="pricing-period">Free forever</div>
-                    <div class="pricing-annual-note">&nbsp;</div>
+                    <div class="pricing-quarterly-note">&nbsp;</div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
@@ -1886,9 +1896,9 @@
                 <!-- Plus -->
                 <div class="pricing-card reveal stagger-2">
                     <h3>Plus</h3>
-                    <div class="pricing-price" data-monthly="3.99" data-annual="33.99"><span class="currency">&pound;</span><span class="price-value">3.99</span></div>
+                    <div class="pricing-price" data-monthly="3.99" data-quarterly="7.99"><span class="currency">&pound;</span><span class="price-value">2.66</span></div>
                     <div class="pricing-period"><span class="period-text">per month</span></div>
-                    <div class="pricing-annual-note"><span class="annual-note-text">&nbsp;</span></div>
+                    <div class="pricing-quarterly-note"><span class="quarterly-note-text">&pound;7.99/3 months - save 33%</span></div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
@@ -1947,9 +1957,9 @@
                 <div class="pricing-card featured reveal stagger-3">
                     <span class="pricing-badge">Most Popular</span>
                     <h3>Pro</h3>
-                    <div class="pricing-price" data-monthly="7.99" data-annual="64.99"><span class="currency">&pound;</span><span class="price-value">7.99</span></div>
+                    <div class="pricing-price" data-monthly="7.99" data-quarterly="15.99"><span class="currency">&pound;</span><span class="price-value">5.33</span></div>
                     <div class="pricing-period"><span class="period-text">per month</span></div>
-                    <div class="pricing-annual-note"><span class="annual-note-text">&nbsp;</span></div>
+                    <div class="pricing-quarterly-note"><span class="quarterly-note-text">&pound;15.99/3 months - save 33%</span></div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
@@ -2193,40 +2203,40 @@
             }
         });
 
-        // ===== PRICING TOGGLE (Monthly / Annual) =====
+        // ===== PRICING TOGGLE (Monthly / Quarterly) =====
         const pricingToggle = document.getElementById('pricingToggle');
         const labelMonthly = document.getElementById('labelMonthly');
-        const labelAnnual = document.getElementById('labelAnnual');
+        const labelQuarterly = document.getElementById('labelQuarterly');
 
         pricingToggle.addEventListener('change', function() {
-            const isAnnual = this.checked;
+            const isQuarterly = this.checked;
 
             // Update toggle label styles
-            labelMonthly.classList.toggle('active', !isAnnual);
-            labelAnnual.classList.toggle('active', isAnnual);
+            labelMonthly.classList.toggle('active', !isQuarterly);
+            labelQuarterly.classList.toggle('active', isQuarterly);
 
             // Update pricing cards
             document.querySelectorAll('.pricing-price[data-monthly]').forEach(priceEl => {
                 const monthly = parseFloat(priceEl.getAttribute('data-monthly'));
-                const annual = parseFloat(priceEl.getAttribute('data-annual'));
+                const quarterly = parseFloat(priceEl.getAttribute('data-quarterly'));
                 const priceValueEl = priceEl.querySelector('.price-value');
                 const periodEl = priceEl.closest('.pricing-card').querySelector('.period-text');
-                const annualNoteEl = priceEl.closest('.pricing-card').querySelector('.annual-note-text');
+                const quarterlyNoteEl = priceEl.closest('.pricing-card').querySelector('.quarterly-note-text');
 
-                if (isAnnual) {
-                    // Show annual price per month equivalent
-                    const monthlyEquiv = (annual / 12).toFixed(2);
+                if (isQuarterly) {
+                    // Show quarterly price per month equivalent
+                    const monthlyEquiv = (quarterly / 3).toFixed(2);
                     priceValueEl.textContent = monthlyEquiv;
                     periodEl.textContent = 'per month';
 
                     // Calculate savings percentage
-                    const fullYearMonthly = monthly * 12;
-                    const savings = Math.round(((fullYearMonthly - annual) / fullYearMonthly) * 100);
-                    annualNoteEl.textContent = '\u00A3' + annual.toFixed(2) + '/yr \u2014 save ' + savings + '%';
+                    const fullQuarterMonthly = monthly * 3;
+                    const savings = Math.round(((fullQuarterMonthly - quarterly) / fullQuarterMonthly) * 100);
+                    quarterlyNoteEl.textContent = '\u00A3' + quarterly.toFixed(2) + '/3 months - save ' + savings + '%';
                 } else {
                     priceValueEl.textContent = monthly.toFixed(2);
                     periodEl.textContent = 'per month';
-                    annualNoteEl.innerHTML = '&nbsp;';
+                    quarterlyNoteEl.innerHTML = '&nbsp;';
                 }
             });
         });
