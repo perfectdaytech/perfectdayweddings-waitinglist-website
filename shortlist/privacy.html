@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - PerfectDay ShortList</title>
-    <meta name="description" content="Privacy Policy for PerfectDay ShortList venue comparison app. Learn how we protect your data.">
+    <title>Privacy Policy - ShortList: Wedding Venues</title>
+    <meta name="description" content="Privacy Policy for ShortList: Wedding Venues app. Learn how we protect your data with a privacy-first, local-storage approach.">
     <link rel="icon" type="image/png" href="assets/Logos/Shortlist_logo_canva_500x500_complete.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +60,7 @@
         .nav-logo {
             width: 40px;
             height: auto;
+            border-radius: 10px;
         }
 
         .nav-title {
@@ -308,8 +309,8 @@
     <!-- Navigation -->
     <nav>
         <a href="index.html" class="nav-brand">
-            <img src="../IMG-20260110-WA0014.png" alt="PerfectDay ShortList" class="nav-logo">
-            <span class="nav-title">Perfect<span>Day</span> ShortList</span>
+            <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="nav-logo">
+            <span class="nav-title">PerfectDay <span>ShortList</span></span>
         </a>
         <div class="nav-links">
             <a href="index.html">Back to ShortList</a>
@@ -319,34 +320,129 @@
 
     <main>
         <h1 class="page-title">Privacy Policy</h1>
-        <p class="last-updated">Last Updated: February 5, 2026</p>
+        <p class="last-updated">Version 2.0.0 - Effective: 17 February 2026</p>
 
         <div class="content-section">
             <h2>1. Introduction</h2>
             <p>
-                PerfectDay ShortList ("the App") is operated by PerfectDay Technologies. This privacy policy explains how we handle your data when you use our venue comparison app.
+                ShortList: Wedding Venues ("the App") is operated by PerfectDay Technologies. This privacy policy explains how we handle your data when you use the App.
+            </p>
+            <p>
+                We process data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
             </p>
         </div>
 
         <div class="content-section">
             <h2>2. Our Privacy-First Approach</h2>
             <div class="highlight-box">
-                <p><strong>PerfectDay ShortList is designed with privacy at its core.</strong> All your venue data is stored locally on your device and is never uploaded to our servers.</p>
+                <p><strong>ShortList: Wedding Venues is designed with privacy at its core.</strong> All your venue data is stored locally on your device and is never uploaded to our servers.</p>
             </div>
-        </div>
-
-        <div class="content-section">
-            <h2>3. Data We Store</h2>
             <ul>
-                <li>All venue data, scores, questionnaire answers, and preferences are stored locally on your device using SQLite</li>
-                <li>We do not have access to your venue data</li>
-                <li>No account or login required</li>
-                <li>Data remains on your device unless you choose to export it</li>
+                <li>No account or login is required to use the App</li>
+                <li>We collect optional, anonymous analytics data - but only with your explicit consent (see <a href="#analytics">Section 5</a>)</li>
+                <li>We do not sell your data, share it with advertisers, or use it for profiling</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>4. Third-Party Services</h2>
+            <h2>3. Data Stored on Your Device</h2>
+            <p>All of the following data is stored locally on your device using SQLite. We do not have access to this data.</p>
+
+            <h3>3.1 Venue Data</h3>
+            <ul>
+                <li>Venue names, addresses, phone numbers, websites, and coordinates</li>
+                <li>Scores and questionnaire answers across 7 categories</li>
+                <li>Photos (stored as local file references and Google Places photo references)</li>
+                <li>Notes, quotes, capacity details, visit dates, and contact information</li>
+            </ul>
+
+            <h3>3.2 Comparison and Decision Data</h3>
+            <ul>
+                <li>Picker/showdown game results and statistics</li>
+                <li>Comparison history and dismissed insights</li>
+                <li>Final venue decision and timeline events</li>
+            </ul>
+
+            <h3>3.3 App Preferences</h3>
+            <ul>
+                <li>User settings (theme, accent colour, motion preferences)</li>
+                <li>Subscription tier (cached locally for offline access)</li>
+                <li>Anonymous user identifier (a random UUID used for analytics if you opt in)</li>
+            </ul>
+
+            <h3>3.4 Venue Deletion Queue</h3>
+            <p>
+                If you downgrade your subscription, venues exceeding your new tier limit are placed in a deletion queue. These venues are retained for 3 days to allow you to upgrade or export your data before they are permanently deleted.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>4. Device Permissions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Internet access</td>
+                        <td>Required for venue search (Google Places), subscription verification (RevenueCat), and optional analytics (PostHog)</td>
+                    </tr>
+                    <tr>
+                        <td>Photo library</td>
+                        <td>You may select photos from your device to attach to venues. Only photos you explicitly choose are accessed via the system photo picker</td>
+                    </tr>
+                    <tr>
+                        <td>Vibration (Android)</td>
+                        <td>Used for haptic feedback in the interface</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>The App does not request access to:</strong> your camera, microphone, file system, or device location.</p>
+        </div>
+
+        <div class="content-section" id="analytics">
+            <h2>5. Analytics and Usage Data</h2>
+
+            <h3>5.1 Your Choice</h3>
+            <p>
+                Analytics data collection is entirely optional. When you first open the App, you are shown a consent prompt asking whether you wish to share anonymous usage data. You can change your choice at any time in <strong>Settings > Data & Privacy</strong>. If you decline, no analytics data is collected or sent.
+            </p>
+
+            <h3>5.2 What We Collect (If You Opt In)</h3>
+            <p>We collect anonymous usage events such as:</p>
+            <ul>
+                <li>Feature interactions (e.g. venue added, comparison started, questionnaire completed)</li>
+                <li>Screen views and app lifecycle events (app opened, backgrounded)</li>
+                <li>Purchase and subscription events</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>We do not collect personally identifiable information.</strong> All events are stripped of PII before transmission. Specifically, the following fields are removed: venue names, personal names, email addresses, phone numbers, and contact details.</p>
+            </div>
+
+            <h3>5.3 How Analytics Data Is Processed</h3>
+            <ul>
+                <li>Analytics are processed by <strong>PostHog</strong> (<a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>)</li>
+                <li>Data is sent to PostHog's <strong>EU-hosted infrastructure</strong> for GDPR compliance</li>
+                <li>Each user is identified only by an anonymous UUID - this cannot be linked back to you</li>
+                <li>Session replay is disabled - we do not record your screen or interactions</li>
+            </ul>
+
+            <h3>5.4 Why We Collect Analytics</h3>
+            <ul>
+                <li>To understand which features are most useful so we can improve the App</li>
+                <li>To identify technical issues and improve stability</li>
+                <li>To make informed decisions about future development</li>
+            </ul>
+
+            <h3>5.5 Legal Basis</h3>
+            <p>Consent - GDPR Article 6(1)(a). You actively opt in via the consent prompt.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>6. Third-Party Services</h2>
             <p>We use the following third-party services:</p>
             <table>
                 <thead>
@@ -359,82 +455,141 @@
                 <tbody>
                     <tr>
                         <td>Google Places API</td>
-                        <td>Optional venue search</td>
-                        <td>Search queries only (via our gateway)</td>
+                        <td>Venue search and place details</td>
+                        <td>Search queries, place detail requests (address, phone, website, coordinates, photos) - routed via our API gateway</td>
+                    </tr>
+                    <tr>
+                        <td>PostHog</td>
+                        <td>Anonymous analytics (opt-in only)</td>
+                        <td>Anonymous UUID, usage events (PII stripped), device type, OS version. EU-hosted</td>
                     </tr>
                     <tr>
                         <td>RevenueCat</td>
-                        <td>In-app purchase management</td>
-                        <td>Anonymous purchase receipts</td>
-                    </tr>
-                    <tr>
-                        <td>Sentry</td>
-                        <td>Error reporting</td>
-                        <td>Anonymous crash reports (no personal data)</td>
+                        <td>Subscription management</td>
+                        <td>Anonymous user identifier, purchase history, subscription status, entitlements, product identifiers, expiration and renewal dates</td>
                     </tr>
                     <tr>
                         <td>Apple App Store / Google Play</td>
-                        <td>App distribution &amp; payments</td>
-                        <td>Payment info handled by Apple/Google</td>
+                        <td>App distribution and payments</td>
+                        <td>Payment information handled entirely by Apple/Google</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="content-section">
-            <h2>5. What We Do NOT Collect</h2>
+            <h2>7. What We Do NOT Collect</h2>
             <ul>
-                <li>No personal information</li>
-                <li>No analytics or tracking</li>
-                <li>No advertising identifiers</li>
-                <li>No location data (unless you use venue search)</li>
-                <li>No usage patterns or behavioural data</li>
+                <li>No personal information (name, email address, phone number)</li>
+                <li>No advertising identifiers or ad tracking</li>
+                <li>No device location data (only venue coordinates retrieved from Google Places)</li>
+                <li>No camera or microphone access</li>
+                <li>No session recordings or screen captures</li>
+                <li>No data is sold to third parties or shared with advertisers</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>6. Data Export &amp; Deletion</h2>
+            <h2>8. Your Privacy Controls</h2>
+
+            <h3>8.1 Analytics Consent</h3>
+            <p>You can enable or disable anonymous analytics at any time in <strong>Settings > Data & Privacy</strong>. Opting out stops all future analytics data collection immediately.</p>
+
+            <h3>8.2 Data Export (Right to Data Portability)</h3>
+            <p>You can export all your venue data as JSON, CSV, or PDF at any time via Settings. JSON export provides a complete, machine-readable copy of all your data in accordance with GDPR Article 20.</p>
+
+            <h3>8.3 Data Deletion (Right to Erasure)</h3>
+            <p>Use the <strong>"Delete All My Data"</strong> button in Settings to permanently erase all local data. Uninstalling the App also removes all local data from your device. Previously sent anonymous analytics data cannot be linked back to you and is retained per PostHog's retention policy.</p>
+
+            <h3>8.4 Data Access (Right of Access)</h3>
+            <p>You can view all your data within the App at any time. Use the export feature to obtain a portable copy in accordance with GDPR Article 15.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>9. Data Export and Deletion</h2>
             <ul>
-                <li>Export all your data as JSON or CSV at any time via Settings</li>
-                <li>Delete all data from within the app</li>
-                <li>Uninstalling the app removes all local data</li>
+                <li>Export all your data as <strong>JSON, CSV, or PDF</strong> at any time via Settings</li>
+                <li>PDF exports include photos and scores for a printable venue comparison report</li>
+                <li>Delete all data using "Delete All My Data" in Settings</li>
+                <li>Uninstalling the App removes all local data from your device</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>7. In-App Purchases</h2>
+            <h2>10. In-App Purchases and Promotional Codes</h2>
+
+            <h3>10.1 Subscriptions</h3>
             <ul>
                 <li>Subscriptions are managed through Apple App Store or Google Play</li>
-                <li>We use RevenueCat to verify purchase status</li>
-                <li>Payment information is handled entirely by Apple/Google</li>
-                <li>We do not store credit card or payment details</li>
+                <li>We use RevenueCat to verify purchase status and manage entitlements</li>
+                <li>Data shared with RevenueCat includes: anonymous user identifier, purchase history, subscription status, product identifiers, expiration and renewal dates, and grace period details</li>
+                <li>Payment information (credit card, billing address) is handled entirely by Apple/Google - we never see or store it</li>
             </ul>
+
+            <h3>10.2 Promotional Codes</h3>
+            <p>The App supports promotional codes that may grant access to premium features. When a code is redeemed, we store the code identifier and the access level granted. No personal information is collected when redeeming a code.</p>
         </div>
 
         <div class="content-section">
-            <h2>8. Children's Privacy</h2>
-            <p>The App is not directed at children under 13. We do not knowingly collect data from children.</p>
+            <h2>11. Data Retention</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Venue data, scores, comparisons, photos</td>
+                        <td>Until you delete it or uninstall the App</td>
+                    </tr>
+                    <tr>
+                        <td>App preferences and settings</td>
+                        <td>Until you delete it or uninstall the App</td>
+                    </tr>
+                    <tr>
+                        <td>Venue deletion queue (after downgrade)</td>
+                        <td>3 days, then automatically deleted</td>
+                    </tr>
+                    <tr>
+                        <td>Anonymous analytics data (if opted in)</td>
+                        <td>Per PostHog's data retention policy</td>
+                    </tr>
+                    <tr>
+                        <td>RevenueCat purchase records</td>
+                        <td>Per RevenueCat's data retention policy</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="content-section">
-            <h2>9. Changes to This Policy</h2>
-            <p>We may update this policy from time to time. Material changes will be communicated through the App. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+            <h2>12. Children's Privacy</h2>
+            <p>The App is not directed at children under 13. We do not knowingly collect data from children. If you believe a child under 13 has provided us with personal data, please contact us and we will take steps to delete it.</p>
         </div>
 
         <div class="content-section">
-            <h2>10. Contact Us</h2>
+            <h2>13. Changes to This Policy</h2>
+            <p>We may update this policy from time to time. The version number and effective date at the top of this page will be updated accordingly. Material changes will be communicated through the App. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>14. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, contact us at:</p>
             <p>
                 <strong>Email:</strong> <a href="mailto:shortlist@perfectday-weddings.com">shortlist@perfectday-weddings.com</a>
             </p>
             <p>PerfectDay Technologies</p>
+            <p>We aim to respond to all privacy-related enquiries within 30 days.</p>
+            <p>You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or by calling 0303 123 1113.</p>
         </div>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="../IMG-20260110-WA0014.png" alt="PerfectDay ShortList" class="footer-logo">
+                <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="footer-logo">
                 <span class="footer-brand-name">PerfectDay ShortList</span>
             </div>
             <div class="footer-links">

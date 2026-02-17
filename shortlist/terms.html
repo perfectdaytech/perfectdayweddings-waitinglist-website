@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - PerfectDay ShortList</title>
-    <meta name="description" content="Terms of Service for PerfectDay ShortList venue comparison app.">
+    <title>Terms of Service - ShortList: Wedding Venues</title>
+    <meta name="description" content="Terms of Service for ShortList: Wedding Venues app.">
     <link rel="icon" type="image/png" href="assets/Logos/Shortlist_logo_canva_500x500_complete.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +60,7 @@
         .nav-logo {
             width: 40px;
             height: auto;
+            border-radius: 10px;
         }
 
         .nav-title {
@@ -132,6 +133,7 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--terracotta);
+            margin-top: 1.5rem;
             margin-bottom: 0.75rem;
         }
 
@@ -178,6 +180,29 @@
             margin-bottom: 0;
             color: var(--charcoal);
             font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--champagne);
+        }
+
+        th {
+            background: var(--champagne);
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        td {
+            color: var(--charcoal-light);
         }
 
         /* Footer */
@@ -272,6 +297,14 @@
             .footer-links {
                 justify-content: center;
             }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -279,7 +312,7 @@
     <!-- Navigation -->
     <nav>
         <a href="index.html" class="nav-brand">
-            <img src="../IMG-20260110-WA0014.png" alt="PerfectDay ShortList" class="nav-logo">
+            <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="nav-logo">
             <span class="nav-title">PerfectDay <span>ShortList</span></span>
         </a>
         <div class="nav-links">
@@ -290,12 +323,12 @@
 
     <main>
         <h1 class="page-title">Terms of Service</h1>
-        <p class="last-updated">Last updated: February 5, 2026</p>
+        <p class="last-updated">Version 2.0.0 - Effective: 17 February 2026</p>
 
         <div class="content-section">
             <h2>1. Acceptance of Terms</h2>
             <p>
-                By downloading, installing, or using PerfectDay ShortList ("the App"), you agree to be bound
+                By downloading, installing, or using ShortList: Wedding Venues ("the App"), you agree to be bound
                 by these Terms of Service. If you do not agree to these terms, please do not use the App.
             </p>
         </div>
@@ -303,51 +336,120 @@
         <div class="content-section">
             <h2>2. Description of Service</h2>
             <p>
-                PerfectDay ShortList is a mobile application that helps users compare and evaluate wedding
+                ShortList: Wedding Venues is a mobile application that helps users compare and evaluate wedding
                 venues through structured questionnaires and scoring. The App provides tools for objective
                 venue comparison but does not guarantee the accuracy of venue information or suitability
                 of any venue.
+            </p>
+            <p>
+                The App is designed to work fully offline. All venue data is stored locally on your device.
+                Certain features (venue search via Google Places, subscription verification, and optional analytics)
+                require an internet connection.
             </p>
         </div>
 
         <div class="content-section">
             <h2>3. User Responsibilities</h2>
             <p>
-                When using PerfectDay ShortList, you agree to the following responsibilities:
+                When using ShortList: Wedding Venues, you agree to the following responsibilities:
             </p>
             <ul>
                 <li>You are responsible for the accuracy of venue data you enter</li>
                 <li>You must not use the App for any unlawful purpose</li>
-                <li>You are responsible for maintaining backups of your data</li>
+                <li>You are responsible for maintaining backups of your data using the export features provided</li>
                 <li>You must comply with all applicable laws when using the App</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>4. Subscriptions & Payments</h2>
+            <h2>4. Subscription Tiers and Features</h2>
             <p>
-                The App offers free and paid subscription tiers (Plus and Pro). Subscriptions are billed
-                through the Apple App Store or Google Play Store.
+                The App offers free and paid subscription tiers. Each tier provides access to different features:
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free</th>
+                        <th>Plus</th>
+                        <th>Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Venues</td><td>2</td><td>4</td><td>Unlimited</td></tr>
+                    <tr><td>Smart Scoring</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                    <tr><td>Compare</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                    <tr><td>JSON Backup</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                    <tr><td>Dark Mode</td><td>-</td><td>Yes</td><td>Yes</td></tr>
+                    <tr><td>PDF Reports</td><td>-</td><td>Yes</td><td>Yes</td></tr>
+                    <tr><td>Venue Showdown</td><td>-</td><td>-</td><td>Yes</td></tr>
+                    <tr><td>Weighted Scoring</td><td>-</td><td>-</td><td>Yes</td></tr>
+                    <tr><td>CSV Export</td><td>-</td><td>-</td><td>Yes</td></tr>
+                    <tr><td>Timeline</td><td>-</td><td>-</td><td>Yes</td></tr>
+                    <tr><td>Share Cards</td><td>-</td><td>-</td><td>Yes</td></tr>
+                    <tr><td>Accent Colours</td><td>-</td><td>-</td><td>Yes</td></tr>
+                </tbody>
+            </table>
+
+            <p>We reserve the right to modify features available in each tier. Material changes will be communicated through the App.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>5. Subscriptions and Payments</h2>
+            <p>
+                Subscriptions are billed through the Apple App Store or Google Play Store.
             </p>
             <div class="highlight-box">
                 <p>
-                    Prices: Plus &pound;3.99/month or &pound;33.99/year &bull; Pro &pound;7.99/month or &pound;64.99/year
+                    Prices: Plus &pound;3.99/month or &pound;7.99/3 months &bull; Pro &pound;7.99/month or &pound;15.99/3 months
                 </p>
             </div>
             <ul>
                 <li>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date</li>
-                <li>Refunds are handled by Apple or Google per their respective policies</li>
-                <li>Upon downgrade, a 14-day grace period applies for venues exceeding your tier limit</li>
                 <li>You can manage or cancel subscriptions through your device's app store settings</li>
+                <li>If a payment fails, your subscription enters a billing grace period (typically 16 days) during which you retain access while the platform retries the charge</li>
+                <li>Refunds are handled by Apple or Google per their respective policies</li>
+                <li>Prices may vary by region and are displayed in your local currency at the point of purchase</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>5. Intellectual Property</h2>
+            <h2>6. Downgrade and Venue Deletion</h2>
             <p>
-                PerfectDay ShortList and all of its content, features, and functionality are owned by
-                PerfectDay Technologies. You may not copy, modify, or distribute the App or any part
-                of its content.
+                If your subscription expires or you downgrade to a lower tier, and you have more venues than your new tier allows:
+            </p>
+            <ul>
+                <li>You will be asked to select which venues to keep within your new tier's limit</li>
+                <li>Unselected venues are placed in a <strong>3-day deletion queue</strong></li>
+                <li>During these 3 days, you can still export data from queued venues but cannot edit them</li>
+                <li>After 3 days, queued venues are permanently deleted from your device</li>
+                <li>If you resubscribe during the 3-day window, all queued venues are restored</li>
+            </ul>
+            <div class="highlight-box">
+                <p>We strongly recommend exporting a JSON backup before your subscription expires to ensure no data is lost.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>7. Promotional Codes</h2>
+            <p>
+                The App may support promotional or VIP codes that grant access to premium features. Promotional codes:
+            </p>
+            <ul>
+                <li>Are non-transferable and may only be used by the intended recipient</li>
+                <li>May grant time-limited or lifetime access depending on the promotion</li>
+                <li>Cannot be exchanged for monetary value</li>
+                <li>May be revoked if obtained fraudulently or in violation of these terms</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>8. Intellectual Property</h2>
+            <p>
+                ShortList: Wedding Venues and all of its content, features, and functionality are owned by
+                PerfectDay Technologies. You may not copy, modify, distribute, or reverse-engineer the App
+                or any part of its content.
             </p>
             <p>
                 Your venue data remains your property at all times. You retain full ownership of all
@@ -356,51 +458,55 @@
         </div>
 
         <div class="content-section">
-            <h2>6. Data & Privacy</h2>
+            <h2>9. Data and Privacy</h2>
             <p>
-                PerfectDay ShortList is designed with your privacy in mind:
+                ShortList: Wedding Venues is designed with your privacy in mind:
             </p>
             <ul>
                 <li>All venue data is stored locally on your device</li>
-                <li>We do not access or store your personal data</li>
-                <li>See our <a href="privacy.html">Privacy Policy</a> for full details</li>
-                <li>You can export or delete your data at any time</li>
+                <li>No account or login is required</li>
+                <li>Optional anonymous analytics are available with your explicit consent and can be disabled at any time in Settings</li>
+                <li>You can export your data as JSON, CSV, or PDF at any time</li>
+                <li>You can delete all your data from within the App</li>
+                <li>See our <a href="privacy.html">Privacy Policy</a> for full details on data handling, third-party services, and your rights</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>7. Third-Party Services</h2>
+            <h2>10. Third-Party Services</h2>
             <p>
-                The App may integrate with or rely upon third-party services:
+                The App integrates with the following third-party services:
             </p>
             <ul>
-                <li>The App may use Google Places API for venue search functionality</li>
-                <li>In-app purchases are processed by Apple or Google</li>
-                <li>We are not responsible for third-party service availability or terms</li>
+                <li><strong>Google Places API</strong> - for venue search and place details, routed via our API gateway</li>
+                <li><strong>RevenueCat</strong> - for subscription management and purchase verification</li>
+                <li><strong>PostHog</strong> - for optional anonymous usage analytics (opt-in only, EU-hosted)</li>
+                <li><strong>Apple App Store / Google Play</strong> - for app distribution and payment processing</li>
             </ul>
             <p>
                 Your use of third-party services is subject to their respective terms and conditions
-                and privacy policies.
+                and privacy policies. We are not responsible for third-party service availability or terms.
             </p>
         </div>
 
         <div class="content-section">
-            <h2>8. Disclaimers</h2>
+            <h2>11. Disclaimers</h2>
             <p>
-                PerfectDay ShortList is provided "as is" and "as available" without warranties of any
+                ShortList: Wedding Venues is provided "as is" and "as available" without warranties of any
                 kind, either express or implied, including but not limited to implied warranties of
                 merchantability, fitness for a particular purpose, and non-infringement.
             </p>
             <ul>
                 <li>We do not guarantee the accuracy of venue scores or comparisons</li>
-                <li>Venue information entered by users is not verified by us</li>
+                <li>Venue information entered by users or retrieved from Google Places is not verified by us</li>
                 <li>We are not responsible for any decisions made based on App data</li>
-                <li>We are not liable for data loss; users should regularly export backups</li>
+                <li>We are not liable for data loss - users should regularly export backups</li>
+                <li>Third-party service availability (Google Places, RevenueCat) is outside our control</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>9. Limitation of Liability</h2>
+            <h2>12. Limitation of Liability</h2>
             <p>
                 To the maximum extent permitted by applicable law, PerfectDay Technologies and its
                 affiliates, officers, employees, and agents shall not be liable for any indirect,
@@ -413,31 +519,32 @@
         </div>
 
         <div class="content-section">
-            <h2>10. Termination</h2>
+            <h2>13. Termination</h2>
             <p>
-                You may stop using PerfectDay ShortList at any time by uninstalling the App. We may
+                You may stop using ShortList: Wedding Venues at any time by uninstalling the App. We may
                 suspend or terminate your access to the App if you violate these Terms of Service.
             </p>
             <p>
-                Upon termination, your local data remains on your device. Your licence to use the
-                App ends upon termination.
+                Upon termination, your local data remains on your device until you delete it or uninstall
+                the App. Your licence to use the App ends upon termination.
             </p>
         </div>
 
         <div class="content-section">
-            <h2>11. Changes to Terms</h2>
+            <h2>14. Changes to Terms</h2>
             <p>
-                We reserve the right to modify these Terms of Service at any time. Continued use of
-                the App after changes take effect constitutes acceptance of the revised terms.
+                We reserve the right to modify these Terms of Service at any time. The version number and
+                effective date at the top of this page will be updated accordingly. Material changes will
+                be communicated through the App.
             </p>
             <p>
-                Material changes will be communicated through the App. If you do not agree to the
-                changes, you should stop using the App.
+                Continued use of the App after changes take effect constitutes acceptance of the revised
+                terms. If you do not agree to the changes, you should stop using the App.
             </p>
         </div>
 
         <div class="content-section">
-            <h2>12. Governing Law</h2>
+            <h2>15. Governing Law</h2>
             <p>
                 These Terms of Service shall be governed by and construed in accordance with the
                 laws of England and Wales. Any disputes arising from these terms or your use of the
@@ -446,7 +553,7 @@
         </div>
 
         <div class="content-section">
-            <h2>13. Contact</h2>
+            <h2>16. Contact</h2>
             <p>
                 If you have any questions about these Terms of Service, please contact us at:
             </p>
@@ -462,7 +569,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="../IMG-20260110-WA0014.png" alt="PerfectDay ShortList" class="footer-logo">
+                <img src="assets/Logos/Shortlist_logo_canva_500x500_complete.png" alt="ShortList" class="footer-logo">
                 <span class="footer-brand-name">PerfectDay ShortList</span>
             </div>
             <div class="footer-links">
