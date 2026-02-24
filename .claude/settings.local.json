@@ -5,7 +5,10 @@
       "Bash(powershell -File -:*)",
       "Bash(start \"\" \"c:\\\\Users\\\\oschi\\\\perfectdaytechnologies\\\\perfectdayweddings-waitinglist-website\\\\shortlist\\\\index.html\")",
       "Bash(dir:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:play.google.com)",
+      "WebFetch(domain:bitly.com)",
+      "WebFetch(domain:joshbuchea.com)"
     ]
   }
 }
